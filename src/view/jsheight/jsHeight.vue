@@ -46,6 +46,11 @@
       event.offsetY 相对容器的垂直坐标
       document.documentElement.scrollTop 垂直方向滚动的值
       event.clientX+document.documentElement.scrollTop 相对文档的水平座标+垂直方向滚动的量
+
+      进入windows命令窗口之后，输入命令，输入netstat -ano然后回车，就可以看到系统当前所有的端口使用情况。
+      通过命令查找某一特定端口，在命令窗口中输入命令中输入netstat -ano |findstr "端口号"，然后回车就可以看到这个端口被哪个应用占用。
+      查看到对应的进程id之后，就可以通过id查找对应的进程名称，使用命令tasklist |findstr "进程id号"
+      通过命令杀掉进程，或者是直接根据进程的名称杀掉所有的进程，，在命令框中输入如下命令taskkill /f /t /im "进程id或者进程名称"
     </code>
   </pre>
   </div>

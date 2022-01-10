@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import {getRandomLinerColor} from '../utils/index'
+import {getRandomLinerColor} from '../utils'
 export default {
   name: 'atMenu',
   props: {
@@ -45,6 +45,24 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+:root {
+  --colorA: #fff;
+  --colorB: #fff;
+}
+
+@property --colorA {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #fff;
+}
+
+@property --colorB {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #fff;
+}
+
+
 .menu-main{
   display: grid;
   grid-gap: 20px 20px;
@@ -56,10 +74,16 @@ export default {
     border-radius: 6px;
     border: 2px solid #eeeeee;
     padding: 10px 15px;
-    transition: all linear 0.2s;
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    background: linear-gradient(45deg, var(--colorA), var(--colorB));
+    transition: 1s --colorA, 1s --colorB,0.5s transform;
+    &:hover {
+      --colorA: yellowgreen;
+      --colorB: deeppink;
+      transform: scale(1.05);
+    }
     .menu-item_title{
       font-size: 16px;
       color: #42b983;
@@ -70,10 +94,6 @@ export default {
       color: #4f5959;
       text-align: left;
     }
-  }
-  .menu-item:hover{
-    background: #D2D2D2F2;
-    transform: scale(1.05);
   }
 }
 </style>
