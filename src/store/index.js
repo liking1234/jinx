@@ -17,6 +17,12 @@ export default new Vuex.Store({
                 title: "js高度",
                 detail: "js获取各种高度,学习必备。",
                 router:'/jsHeight'
+            },
+            {
+                index: 2,
+                title: "color-js颜色渐变",
+                detail: "color-js插件实现颜色渐变",
+                router:'/color-js'
             }
         ],
         name: 'LJG',

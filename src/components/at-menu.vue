@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import {getRandomLinerColor} from '../utils/index'
+import {getRandomLinerColor} from '../utils'
 export default {
   name: 'atMenu',
   props: {
