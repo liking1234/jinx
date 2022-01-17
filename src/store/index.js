@@ -26,9 +26,21 @@ export default new Vuex.Store({
             },
             {
                 index: 3,
-                title: "CSS mark",
+                title: "CSS mark && property",
                 detail: "一行代码实现头像与国旗的融合",
                 router:'/mark'
+            },
+            {
+                index: 4,
+                title: "CSS smoke",
+                detail: "css实现烟雾效果",
+                router:'/smoke'
+            },
+            {
+                index: 5,
+                title: "CSS aurora",
+                detail: "css实现极光效果",
+                router:'/aurora'
             }
         ],
         name: 'LJG',

@@ -1,5 +1,5 @@
 <template>
-  <div class="side-bar-main">
+  <div>
     <transition name="fade">
       <div class="left-main" v-if="showLeft">
         <div v-for="(item,index) in menuArr" :key="index" @click="goItemRouter(item,index)" class="width-100">
@@ -24,9 +24,6 @@
         </svg>
       </div>
     </transition>
-    <div class="right-main">
-      <router-view/>
-    </div>
   </div>
 </template>
 
@@ -37,22 +34,32 @@ export default {
     return{
       menuArr:[],
       showLeft:true,
-      currentIndex:2
+      currentIndex: 0
     }
   },
   created() {
   },
   mounted() {
+    let _this=this
     this.menuArr = this.$store.getters.getMenuArr
+    this.menuArr.forEach(item=>{
+      if(item.router===this.$route.path){
+        this.currentIndex = item.index
+      }
+    })
+    // 事件总线的方式监听改变数据后被data内的默认值覆盖了
+    // 这里用来监听
     this.$EventBus.$off("aMsg");
-    this.$EventBus.$on("aMsg", (index) => {
-        this.currentIndex = index
+    this.$EventBus.$on("aMsg",  function (data){
+        _this.currentIndex = data
     });
+  },
+  updated() {
   },
   watch:{
     // currentIndex:{
     //   handler(nv,ov){
-    //     console.log(nv)
+    //     console.log(nv,ov)
     //   },
     //   immediate:true
     // }
@@ -76,59 +83,57 @@ export default {
     backHome(){
       this.$router.push('/')
     }
+  },
+  destroyed() {
+    // this.$EventBus.$off("aMsg");
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.side-bar-main{
-  width: 100%;
-  height: 100%;
+.left-main{
+  min-width: 200px;
+  margin-right: 20px;
+  border-right: 1px solid #eeeeee;
   display: flex;
-  .left-main{
-    min-width: 200px;
-    margin-right: 20px;
-    border-right: 1px solid #eeeeee;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: 50px;
-    position: relative;
-    .left-main_title{
-      color: #42b983;
-      font-size: 16px;
-      text-decoration: underline;
-      cursor: pointer;
-      width: 100%;
-      padding: 10px 30px;
-    }
-    .left-main_title:hover{
-      opacity: 0.8;
-      background: #ecf5ff;
-    }
-    .is_active{
-      background: #ecf5ff;
-    }
-    .home{
-      position: absolute;
-      left: 0;
-    }
-    .pickUp{
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translate(-50%,-50%);
-    }
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 10px 0 30px;
+  position: relative;
+  height: 100%;
+  .left-main_title{
+    color: #42b983;
+    font-size: 16px;
+    text-decoration: underline;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px 30px;
+    border-radius: 4px;
   }
-  .openUp{
+  .left-main_title:hover{
+    opacity: 0.8;
+    background: #ecf5ff;
+  }
+  .is_active{
+    background: #ecf5ff;
+    border: 1px solid #eeeeee;
+  }
+  .home{
     position: absolute;
     left: 0;
+    top: 0;
+  }
+  .pickUp{
+    position: absolute;
+    right: 0;
     top: 50%;
-    transform: translate(50%,-50%);
+    transform: translate(-50%,-50%);
   }
-  .right-main{
-    overflow: auto;
-    flex: 1;
-  }
+}
+.openUp{
+  position: absolute;
+  left: 0;
+  top: 50vh;
+  transform: translate(50%,-50%);
 }
 </style>

@@ -34,6 +34,7 @@ export default {
   },
   methods: {
     goItemRouter(item,index){
+      console.log('$emit("aMsg") 数据：'+index)
       this.$EventBus.$emit("aMsg", index);
       this.$router.push({
         path:item.router
@@ -66,22 +67,25 @@ export default {
 .menu-main{
   display: grid;
   grid-gap: 20px 20px;
-  grid-template-columns: repeat(auto-fill, 160px);
+  grid-template-columns: repeat(auto-fill, 190px);
   justify-content: space-between;
   .menu-item{
+    word-break: break-all;
     width: 100%;
-    min-height: 80px;
+    min-height: 90px;
     border-radius: 6px;
     border: 2px solid #eeeeee;
     padding: 10px 15px;
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    --colorA: #fff;
+    --colorB: #fff;
     background: linear-gradient(45deg, var(--colorA), var(--colorB));
     transition: 1s --colorA, 1s --colorB,0.5s transform;
     &:hover {
-      --colorA: yellowgreen;
-      --colorB: deeppink;
+      --colorA: #ccf19a;
+      --colorB: #fca8d9;
       transform: scale(1.05);
     }
     .menu-item_title{

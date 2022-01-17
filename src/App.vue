@@ -19,7 +19,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  padding: 20px 10px;
+  padding: 20px;
   width: 100%;
   height: 100%;
   /*background-image: linear-gradient(45deg, rgba(206, 124, 173, 0.98), #e1ddee);*/
@@ -90,7 +90,7 @@ body {
           rgba(37, 37, 37, 0.04) 100%
       ),
       linear-gradient(var(--angle), rgb(34, 222, 237), rgb(135, 89, 215));
-  animation: move 30s infinite alternate linear;
+      animation: move 30s infinite alternate linear;
 }
 
 @keyframes move {

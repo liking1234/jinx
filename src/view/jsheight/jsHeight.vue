@@ -53,7 +53,18 @@
       通过命令杀掉进程，或者是直接根据进程的名称杀掉所有的进程，，在命令框中输入如下命令taskkill /f /t /im "进程id或者进程名称"
 
       git push -> error 10054
+      先修改设置解除ssl验证。
       git config --global http.sslVerify "false"
+      如果提示Filename too long，说明文件名或路径太长249f6
+      git config --global core.longpaths true8b4
+      如果是上传push提示的话。可能是文件过大，修改为500M
+      git config http.postBuffer 52428800024
+
+
+      本地git拉取(pull)或抓取(fetch)远程github仓库出现
+      Failed to connect to github.com port 443: Timed out
+      在本地git使用下面这条命令直接解决问题
+      git config --global --unset http.proxy
     </code>
   </pre>
   </div>

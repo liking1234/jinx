@@ -53,7 +53,7 @@
 
 <script>
 export default {
-  name: "mark"
+  name: "mark-property"
 }
 </script>
 

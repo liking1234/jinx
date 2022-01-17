@@ -16,6 +16,17 @@ Vue.config.productionTip = false
 // 事件总线
 Vue.prototype.$EventBus = new Vue()
 
+
+// const EventBus = new Vue();
+//
+// Object.defineProperties(Vue.prototype, {
+//   $EventBus: {
+//     get: function () {
+//       return EventBus
+//     }
+//   }
+// })
+
 new Vue({
   render: h => h(App),
   router,

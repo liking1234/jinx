@@ -6,6 +6,8 @@ import jsHeight from '../view/jsheight/jsHeight'
 import home from '../view/home'
 import colorJs from '../view/colorjs/colorJs'
 import mark from '../view/mark/mark'
+import smoke from '../view/smoke/smoke'
+import aurora from '../view/aurora/aurora'
 
 Vue.use(Router)
 
@@ -57,6 +59,22 @@ export default new Router({
                     path: '/mark',
                     name: 'mark',
                     component: mark,
+                    meta: {
+                        requireAuth: true
+                    }
+                },
+                {
+                    path: '/smoke',
+                    name: 'smoke',
+                    component: smoke,
+                    meta: {
+                        requireAuth: true
+                    }
+                },
+                {
+                    path: '/aurora',
+                    name: 'aurora',
+                    component: aurora,
                     meta: {
                         requireAuth: true
                     }

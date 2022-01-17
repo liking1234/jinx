@@ -1,0 +1,33 @@
+#text {
+  width: 80vh;
+  height: 60vh;
+  margin: auto;
+  background: linear-gradient(#fff, #999, #ddd, #888);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 30vmin;
+  text-align: center;
+  line-height: 80vh;
+}
+
+.parcel:hover {
+  filter: url("#filter");
+  cursor: pointer;
+}
+.parcel:hover #text {
+  -webkit-animation: blurChange 2s ease-out forwards;
+  animation: blurChange 2s ease-out forwards;
+}
+
+@-webkit-keyframes blurChange {
+  100% {
+    filter: blur(15px) contrast(200%);
+  }
+}
+
+@keyframes blurChange {
+  100% {
+    filter: blur(15px) contrast(200%);
+  }
+}
