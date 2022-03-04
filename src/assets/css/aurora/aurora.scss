@@ -1,0 +1,56 @@
+@function randomNum($max, $min: 0, $u: 1) {
+  @return ($min + random($max)) * $u;
+}
+
+@function shadowSet($n, $size) {
+  $shadow : 0 0 0 0 #fff;
+
+  @for $i from 0 through $n {
+    $x: randomNum(1200);
+    $y: randomNum(612);
+    $scale: randomNum($size) / 10;
+
+    $shadow: $shadow, #{$x}px #{$y}px 0 #{$scale}px rgba(255, 255, 255, .8);
+  }
+
+  @return $shadow;
+}
+
+.g-wrap {
+  position: relative;
+  width: 100%;
+  height: 97%;
+  background: #0b1a3a;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+    box-shadow: shadowSet(1000, 6);
+  }
+}
+
+.g-aurora {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+}
+.g-aurora::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 140%;
+  background: #fff;
+  background: radial-gradient(circle at 100% 100%, transparent 45%, #bd63c1 55%, #53e5a6 65%, transparent 85%);
+  box-shadow: inset 0 0 18px 0 #0b1a3a;
+  filter: url("#wave");
+  mix-blend-mode: color-dodge;
+  transform: rotate(45deg) scaleX(1.4);
+}

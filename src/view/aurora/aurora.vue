@@ -4,12 +4,13 @@
       <div class="g-aurora"></div>
     </div>
 
-
-    <svg id='blob' version='1.1' xmlns='http://www.w3.org/2000/svg'>
+    <svg>
       <defs>
         <filter id='wave'>
-          <feturbulence basefrequency='0.00510 0.01099' id='turbulence' numoctaves='3' result='noise' seed='10' />
-          <fedisplacementmap id='displacement' in2='noise' in='SourceGraphic' scale='96' />
+          <!--          <feTurbulence id="turbulence" type="fractalNoise" baseFrequency=".0003 .0003" numOctaves="20" seed='10'/>-->
+          <!--          <feDisplacementMap in="SourceGraphic" scale="70"/>-->
+          <feTurbulence baseFrequency='0.00510 0.01099' id='turbulence' numOctaves='3' result='noise' seed='10' />
+          <feDisplacementMap id='displacement' in2='noise' in='SourceGraphic' scale='96' />
         </filter>
       </defs>
     </svg>
@@ -44,5 +45,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~@/assets/css/aurora/aurora.css";
+@import "~@/assets/css/aurora/aurora.scss";
+svg {
+  width: 0;
+  height: 0;
+}
 </style>

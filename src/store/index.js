@@ -32,15 +32,27 @@ export default new Vuex.Store({
             },
             {
                 index: 4,
-                title: "CSS smoke",
+                title: "smoke烟雾",
                 detail: "css实现烟雾效果",
                 router:'/smoke'
             },
             {
                 index: 5,
-                title: "CSS aurora",
+                title: "aurora极光",
                 detail: "css实现极光效果",
                 router:'/aurora'
+            },
+            {
+                index: 6,
+                title: "Harmony OS",
+                detail: "Harmony OS动态效果",
+                router:'/Harmony'
+            },
+            {
+                index: 7,
+                title: "Grid Layout",
+                detail: "grid布局实现",
+                router:'/grid-layout'
             }
         ],
         name: 'LJG',

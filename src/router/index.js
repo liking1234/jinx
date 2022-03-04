@@ -8,6 +8,8 @@ import colorJs from '../view/colorjs/colorJs'
 import mark from '../view/mark/mark'
 import smoke from '../view/smoke/smoke'
 import aurora from '../view/aurora/aurora'
+import harmony from '../view/harmony/harmony'
+import gridLayout from '../view/grid/grid-layout'
 
 Vue.use(Router)
 
@@ -75,6 +77,22 @@ export default new Router({
                     path: '/aurora',
                     name: 'aurora',
                     component: aurora,
+                    meta: {
+                        requireAuth: true
+                    }
+                },
+                {
+                    path: '/harmony',
+                    name: 'harmony',
+                    component: harmony,
+                    meta: {
+                        requireAuth: true
+                    }
+                },
+                {
+                    path: '/grid-layout',
+                    name: '/grid-layout',
+                    component: gridLayout,
                     meta: {
                         requireAuth: true
                     }
