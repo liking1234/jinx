@@ -10,6 +10,7 @@ import smoke from '../view/smoke/smoke'
 import aurora from '../view/aurora/aurora'
 import harmony from '../view/harmony/harmony'
 import gridLayout from '../view/grid/grid-layout'
+import transform from '../view/transform/transform'
 
 Vue.use(Router)
 
@@ -93,6 +94,14 @@ export default new Router({
                     path: '/grid-layout',
                     name: '/grid-layout',
                     component: gridLayout,
+                    meta: {
+                        requireAuth: true
+                    }
+                },
+                {
+                    path: '/transform',
+                    name: '/transform',
+                    component: transform,
                     meta: {
                         requireAuth: true
                     }

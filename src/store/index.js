@@ -53,6 +53,12 @@ export default new Vuex.Store({
                 title: "Grid Layout",
                 detail: "grid布局实现",
                 router:'/grid-layout'
+            },
+            {
+                index: 8,
+                title: "Vue过渡&动画实现",
+                detail: "Vue过渡&动画实现",
+                router:'/transform'
             }
         ],
         name: 'LJG',
