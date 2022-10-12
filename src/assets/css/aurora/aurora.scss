@@ -8,7 +8,7 @@
   @for $i from 0 through $n {
     $x: randomNum(1200);
     $y: randomNum(612);
-    $scale: randomNum($size) / 10;
+    $scale: calc(randomNum($size) / 10);
 
     $shadow: $shadow, #{$x}px #{$y}px 0 #{$scale}px rgba(255, 255, 255, .8);
   }

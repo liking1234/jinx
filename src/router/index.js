@@ -11,6 +11,10 @@ import aurora from '../view/aurora/aurora'
 import harmony from '../view/harmony/harmony'
 import gridLayout from '../view/grid/grid-layout'
 import transform from '../view/transform/transform'
+import imageContrastWidget from '../view/imageContrastWidget/imageContrastWidget'
+import process from '../view/process/process'
+import textUnderlines from '../view/textUnderlines/textUnderlines'
+import typing from '../view/typing/typing'
 
 Vue.use(Router)
 
@@ -102,6 +106,38 @@ export default new Router({
                     path: '/transform',
                     name: '/transform',
                     component: transform,
+                    meta: {
+                        requireAuth: true
+                    }
+                },
+                {
+                    path: '/imageContrastWidget',
+                    name: '/imageContrastWidget',
+                    component: imageContrastWidget,
+                    meta: {
+                        requireAuth: true
+                    }
+                },
+                {
+                    path: '/process',
+                    name: '/process',
+                    component: process,
+                    meta: {
+                        requireAuth: true
+                    }
+                },
+                {
+                    path: '/textUnderlines',
+                    name: '/textUnderlines',
+                    component: textUnderlines,
+                    meta: {
+                        requireAuth: true
+                    }
+                },
+                {
+                    path: '/typing',
+                    name: '/typing',
+                    component: typing,
                     meta: {
                         requireAuth: true
                     }

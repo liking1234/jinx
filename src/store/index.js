@@ -59,6 +59,30 @@ export default new Vuex.Store({
                 title: "Vue过渡&动画实现",
                 detail: "Vue过渡&动画实现",
                 router:'/transform'
+            },
+            {
+                index: 9,
+                title: "imageContrastWidget",
+                detail: "imageContrastWidget",
+                router:'/imageContrastWidget'
+            },
+            {
+                index: 10,
+                title: "process",
+                detail: "process",
+                router:'/process'
+            },
+            {
+                index: 11,
+                title: "textUnderlines",
+                detail: "textUnderlines",
+                router:'/textUnderlines'
+            },
+            {
+                index: 12,
+                title: "typing",
+                detail: "typing",
+                router:'/typing'
             }
         ],
         name: 'LJG',
